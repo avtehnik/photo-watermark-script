@@ -31,7 +31,7 @@ jobs:
     outputs:
       app_release: ${{ steps.vars.outputs.app_release }}
       ref_slug: ${{ steps.vars.outputs.ref_slug }}
-      github_image: ghcr.io/nexben/${{ env.IMAGE_NAME }}
+      github_image: ghcr.io/avtehnik/${{ env.IMAGE_NAME }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -88,7 +88,6 @@ jobs:
         with:
           images: |
             ${{ needs.vars.outputs.github_image }}/apache
-            ${{ needs.vars.outputs.oci_image }}/apache
           tags: |
             type=raw,value=${{ needs.vars.outputs.app_release }}
 
