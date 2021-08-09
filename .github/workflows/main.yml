@@ -87,7 +87,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            ${{ needs.vars.outputs.github_image }}/apache
+            ${{ needs.vars.outputs.github_image }}
           tags: |
             type=raw,value=${{ needs.vars.outputs.app_release }}
 
